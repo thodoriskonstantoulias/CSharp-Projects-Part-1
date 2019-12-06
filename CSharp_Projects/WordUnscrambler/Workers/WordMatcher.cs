@@ -33,8 +33,6 @@ namespace WordUnscrambler.Workers
                     }
                 }
             }
-
-
             return matchedWords;
         }
     }
