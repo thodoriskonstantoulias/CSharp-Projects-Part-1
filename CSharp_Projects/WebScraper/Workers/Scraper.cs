@@ -32,7 +32,6 @@ namespace WebScraper.Workers
                     }
                 }
             }
-
             return scrapedElements;
         }
     }
