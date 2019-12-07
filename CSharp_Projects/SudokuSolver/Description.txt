@@ -1,0 +1,35 @@
+﻿SudokuPuzzleFile = ask user for input
+read SudokuPuzzleFile
+if SudokuPuzzleFile is invalid show warning
+otherwise
+convert loaded SudokuPuzzleFile into matrix
+print Sudoku Puzzle matrix
+solve Sudoku Puzzle matrix
+	initialize list of strategies
+		simple mark-up strategy
+		naked pair strategy
+capture current state of Sudoku Puzzle matrix
+	capture next state of Sudoku Puzzle matrix after running through first strategy in list
+	while Sudoku Puzzle matrix is not solved and current state != next state
+		current state = next state
+		for each strategy in strategies
+			next state = state of Sudoku Puzzle matrix after running through strategy
+print Sudoku Puzzle matrix
+print if Sudoku Puzzle matrix was solved or not
+
+
+simple mark-up strategy
+	for each row in matrix
+		for each col in matrix
+			if current spot == 0 or current spot’s value has length > 1
+				rowColPossibilities = get possibilities for row and col based on the current spot
+				groupPossibilities = get possibilities for the group that current spot is in
+				current spot = intersection of possibilities for rowColPossibilities and groupPossibilities
+naked pair strategy
+	for each row in matrix
+		for each col in matrix
+			if current spot has naked pair in row then eliminate it
+			if current spot has naked pair in col then eliminate it
+			if current spot has naked pair in group then eliminate it
+
+	
