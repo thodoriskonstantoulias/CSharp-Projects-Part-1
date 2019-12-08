@@ -21,7 +21,8 @@ namespace SudokuSolver.Strategies
         {
             List<ISudokuStrategy> strategies = new List<ISudokuStrategy>() 
             {
-            
+                new SimpleMarkUpStrategy(_sudokuMapper),
+                new NakedPairStrategy(_sudokuMapper)
             };
             var currentState = _sudokuBoardStateManager.GenerateState(sudokuBoard);
             var nextState = _sudokuBoardStateManager.GenerateState(strategies.First().Solve(sudokuBoard));
@@ -33,7 +34,6 @@ namespace SudokuSolver.Strategies
                     nextState = _sudokuBoardStateManager.GenerateState(strategy.Solve(sudokuBoard));
                 }
             }
-
             return _sudokuBoardStateManager.IsSolved(sudokuBoard);
         }
     }
