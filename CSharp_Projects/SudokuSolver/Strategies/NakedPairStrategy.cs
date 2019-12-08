@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SudokuSolver.Strategies
 {
-    class NakedPairStrategy : ISudokuStrategy
+    public class NakedPairStrategy : ISudokuStrategy
     {
         private readonly SudokuMapper _sudokuMapper;
 

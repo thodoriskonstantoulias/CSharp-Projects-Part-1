@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SudokuSolver.Workers
 {
-    class SudokuMapper
+    public class SudokuMapper
     {
         public SudokuMap Find(int givenRow,int givenCol)
         {
